@@ -10,7 +10,7 @@ const page: React.FC = () => {
         {/* Bag Section */}
         <div className="lg:col-span-2">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">Bag</h2>
-          {["prodct3", "product-4"].map((item, index) => (
+            {["Parent1", "Parent2"].map((item, index) => (
             <div
               key={index}
               className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 border-b pb-4"
