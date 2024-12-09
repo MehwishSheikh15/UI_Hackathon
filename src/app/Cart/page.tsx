@@ -18,7 +18,7 @@ const page: React.FC = () => {
               {/* Left Section: Image and Product Info */}
               <div className="flex items-start gap-4">
                 <Image
-                  src={`${item}.Png`} // Adjust path if necessary
+                  src={`/${item}.png`} // Adjust path if necessary
                   alt="Library Stool Chair"
                   width={150} // Specify width
                   height={150} // Specify height
