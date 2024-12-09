@@ -1,22 +1,23 @@
-import React from 'react';
+
+          import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="bg-white  px-10  shadow-lg"> {/* Parent div with rounded corners and white background */}
-      <div className="relative bg-gray-200 text-black py-20 px-10 rounded-lg"> 
+    <div className="bg-white px-4 sm:px-8 md:px-10 shadow-lg">
+      {/* Parent div with white background */}
+      <div className="relative bg-gray-200 text-black py-20 px-6 sm:px-10 md:px-12 rounded-lg">
         {/* Hero Section Container */}
-        <div className="container mx-auto flex items-center justify-between space-x-8">
-          
+        <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
           {/* Left Side - Text Content */}
           <div className="flex flex-col items-start space-y-4 max-w-xl">
             {/* Small Text */}
             <p className="text-sm font-light">Welcome to Chairy</p>
-            
+
             {/* Large Bold Heading */}
-            <h1 className="text-5xl font-extrabold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
               Best Furniture Collection for your interior.
             </h1>
-            
+
             {/* Shop Now Button */}
             <div className="mt-6">
               <a 
@@ -47,20 +48,20 @@ const Hero = () => {
             <img 
               src="Product Image.png"  // Replace with the correct image path
               alt="Product"
-              className="w-[400px] h-auto rounded-lg" // Rounded corners for the image
+              className="w-full sm:w-[400px] h-auto rounded-lg" // Responsive image width and rounded corners
             />
           </div>
         </div>
       </div>
-            {/* Company Logo Section */}
+
+      {/* Company Logo Section */}
       <div className="flex justify-center mt-8">
         <img 
           src="./CompanyLogo.png"  // Replace with your actual company logo path
           alt="Company Logo"
-          className="h-24 rounded-full  w-auto " // Rounded logo
+          className="h-16 sm:h-24 rounded-full w-auto" // Adjust logo size for mobile and desktop
         />
       </div>
-     
     </div>
   );
 };
