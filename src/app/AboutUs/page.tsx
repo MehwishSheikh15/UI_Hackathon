@@ -22,7 +22,7 @@ const AboutSection = () => {
         <div className="flex justify-center items-center">
           <div className="relative w-full max-w-lg h-[400px] md:h-[478px]">
             <Image
-              src="/product-1.png"
+              src="/product6.png"
               alt="Comforty Chair"
               layout="fill"
               objectFit="cover"
