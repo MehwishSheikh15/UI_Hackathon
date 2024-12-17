@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
           </ul>
           <div className="mr-4 hover:underline hidden sm:block">
             
-     <Link href="/Contact" className="text-teal-500 hover:text-teal-950">ContactUs:035162895</Link>
+     <Link href="/Contact" className="text-teal-500 hover:text-teal-950">ContactUs:03145531971</Link>
                         
                       </div>
 
