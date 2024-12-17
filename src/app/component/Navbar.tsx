@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   return (
     <header className="shadow bg-indigo-950">
       {/* Top Line */}
-      <div className="bg-indigo-950 text-white text-sm">
+      <div className="bg-indigo-950 text-white text-sm  ">
         <div className="container opacity-70 mx-auto flex justify-between items-center px-4 py-2">
           <span>✓ Free Shipping On All Orders Over $50</span>
           <div className="flex items-center gap-4">
@@ -98,8 +98,8 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/Contact" className="text-teal-500 hover:text-teal-950">
-                Contact
+              <Link href="/Pages" className="text-teal-500 hover:text-teal-950">
+                Pages
               </Link>
             </li>
             <li>
@@ -108,6 +108,11 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
           </ul>
+          <div className="mr-4 hover:underline hidden sm:block">
+            
+     <Link href="/Contact" className="text-teal-500 hover:text-teal-950">ContactUs:035162895</Link>
+                        
+                      </div>
 
           {/* Mobile Hamburger Menu */}
           <div className="sm:hidden flex items-center">
@@ -142,8 +147,8 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/Contact" className="block text-teal-500 hover:text-teal-950">
-                Contact
+              <Link href="/Pages" className="block text-teal-500 hover:text-teal-950">
+                Pages
               </Link>
             </li>
             <li>
@@ -151,7 +156,13 @@ const Navbar: React.FC = () => {
                 About Us
               </Link>
             </li>
+            <li>
+            
+            <Link href="/Contact" className="text-teal-500 hover:text-teal-950">ContactUs:035162895</Link>
+                             
+            </li>
           </ul>
+         
         </div>
       )}
     </header>
@@ -159,3 +170,8 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+               
+
+    
+
