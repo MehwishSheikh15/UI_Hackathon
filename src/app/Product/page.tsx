@@ -1,93 +1,97 @@
 
-import React from "react";
-import Image from "next/image";
-import { BsFillCartDashFill } from "react-icons/bs";
-import Link from "next/link";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import React from 'react';
 
+type Product = {
+  image: string;
+  name: string;
+  price: string;
+};
 
-const Page: React.FC = () => {
+const products: Product[] = [
+  { image: '/product1.png', name: 'Comfort Chair', price: '$99.99' },
+  { image: '/product2.png', name: 'Modern Office Chair', price: '$129.99' },
+  { image: '/product3.png', name: 'Ergonomic Chair', price: '$149.99' },
+  { image: '/product4.png', name: 'Executive Leather Chair', price: '$199.99' },
+  { image: '/product5.png', name: 'Reclining Chair', price: '$249.99' },
+  { image: '/product6.png', name: 'Adjustable Desk Chair', price: '$179.99' },
+  { image: '/product7.png', name: 'Mesh Office Chair', price: '$89.99' },
+  { image: '/product8.png', name: 'Swivel Chair', price: '$109.99' },
+  { image: '/category1.png', name: 'Task Chair', price: '$79.99' },
+  { image: '/category2.png', name: 'High Back Chair', price: '$159.99' },
+  { image: '/category3.png', name: 'Gaming Chair', price: '$299.99' },
+  { image: '/product1.png', name: 'Rocking Chair', price: '$119.99' },
+];
+
+const instagramImages: string[] = [
+  '/product1.png',
+  '/product2.png',
+  '/product3.png',
+  '/product4.png',
+  '/product5.png',
+  '/product6.png',
+];
+
+const HomePage: React.FC = () => {
   return (
-    <div>
-       {/* Featured Product Section */}
-       <div className="flex flex-col md:flex-row items-center justify-center max-w-5xl mx-auto mb-16 gap-8">
-        <Image
-          src="/product-2.png"
-          alt="Library Stool Chair"
-          width={675}
-          height={670}
-          className="w-full h-[] max-w-md rounded-lg shadow-lg object-cover"
-        />
-        <div className="text-left">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Library Stool Chair</h2>
-          <p className="px-6 py-3 w-[144] h-[44] font-semibold bg-teal-500 text-white rounded-full mb-4">
-            $20.00 USD
-          </p>
-          <p className="text-gray-600 mt-10 border-t border-gray-200 mb-6">
-            This pink Library stool is very comfortable and flexible. <br />
-            Must use it in libraries and offices. <br />
-            Affordable price with a discount offer!
-          </p>
-          <button className="px-6 py-3 bg-teal-500 text-white rounded-md hover:bg-teal-600 transition flex items-center gap-2">
-            <span>Add To Cart</span>
-            <AiOutlineShoppingCart className="w-5 h-5" />
+    <div className="py-16">
+      {/* Product Section */}
+      <h2 className="text-3xl font-bold text-center mb-12">All Products</h2>
+      
+      {/* Grid Layout with 3 rows of 4 cards each */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {products.map((product, index) => (
+          <div key={index} className="border p-4 rounded-lg flex flex-col h-full">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover mb-4"
+            />
+            <h3 className="text-xl font-semibold">{product.name}</h3>
+            <p className="text-lg text-gray-700">{product.price}</p>
+            <button className="bg-[#029FAE] text-white py-2 px-4 rounded-full flex items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/2543/2543369.png" alt="Add to Cart" className="h-5 w-5 mr-2" />
+                </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Newsletter Section */}
+      <div className="mt-16 text-center">
+        <h2 className="text-3xl font-bold mb-4">OR SUBSCRIBE TO THE NEWSLETTER</h2>
+        <div className="flex justify-center items-center mb-4">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="border p-2 rounded-l-lg w-64"
+          />
+          <button className=" text-black py-2 px-4 rounded-r-lg">
+            Subscribe
           </button>
         </div>
+        {/* Line below the email and submit button */}
+        <div className="border-t border-gray-300 w-64 mx-auto"></div>
       </div>
-      {/* All Products Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">All Products</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {["product-1", "product-2", "product-3", "product-4"].map(
-            (product, i) => (
-              <div key={i} className="overflow-hidden w-80">
-                <div className="relative w-full h-[312px]">
-                  <Image
-                    src={`/${product}.png`}
-                    alt={product}
-                    width={312}
-                    height={312}
-                    className="object-cover w-[290px] h-[290px]"
-                  />
-                  {i === 1 && (
-                    <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                      Sale
-                    </span>
-                  )}
-                  {i === 0 && (
-                    <span className="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
-                      New
-                    </span>
-                  )}
-                </div>
-                <div className="p-4">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-medium text-gray-800">
-                      Library Stool Chair
-                    </h3>
-                    <Link href="/SingleProduct">
-                      <button className="w-13 px-2 py-2 bg-gray-300 text-white rounded-lg hover:bg-teal-600 flex items-center justify-center">
-                        <BsFillCartDashFill className="mr-1" />
-                      </button>
-                    </Link>
-                  </div>
-                  <p className="text-black font-bold mt-2">
-                    $20{" "}
-                    {i === 1 && (
-                      <span className="text-gray-500 line-through text-sm ml-2">
-                        $30
-                      </span>
-                    )}
-                  </p>
-                </div>
-              </div>
-            )
-          )}
-          
+
+      {/* Instagram Follow Section */}
+      <div className="mt-16 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          Follow Products and Discount on Instagram
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {instagramImages.map((image, index) => (
+            <div key={index} className="border p-4 rounded-lg">
+              <img
+                src={image}
+                alt={`Instagram Product ${index + 1}`}
+                className="w-full h-48 object-cover mb-4"
+              />
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };
 
-export default Page;
+export default HomePage;
+
